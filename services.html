@@ -432,37 +432,192 @@
         gap: 1rem;
         font-size: 0.9rem;
       }
+
+      .about-values {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* About Section */
+    .about-section {
+      min-height: 100vh;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-container {
+      width: 100%;
+    }
+
+    .about-content {
+      margin-top: 2rem;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .about-values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .value-item {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(34, 211, 238, 0.2);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .value-item:hover {
+      background: rgba(30, 41, 59, 0.9);
+      border-color: rgba(34, 211, 238, 0.6);
+      transform: translateY(-5px);
+    }
+
+    .value-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .value-item h4 {
+      color: #22d3ee;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .value-item p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(15, 23, 42, 0.95);
+      border-top: 1px solid rgba(34, 211, 238, 0.2);
+      padding: 3rem 2rem;
+      width: 100%;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      color: #22d3ee;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-section p {
+      color: #cbd5e1;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #22d3ee;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(34, 211, 238, 0.1);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      border-radius: 50%;
+      color: #22d3ee;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.3rem;
+    }
+
+    .social-links a:hover {
+      background: rgba(34, 211, 238, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(34, 211, 238, 0.2);
+      padding-top: 2rem;
+      text-align: center;
+      color: #cbd5e1;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+      font-size: 0.95rem;
     }
   </style>
   <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  <script src="/_sdk/telemetry_sdk.js"></script></head>
  <body>
-  <div id="app" class="h-full w-full">
-   <!-- Navigation -->
-   <nav>
-    <nav-container>
+  <div id="app" class="h-full w-full"><!-- Navigation -->
+   <nav><nav-container>
      <div class="logo" id="navLogo">
       Neel
      </div>
      <nav-links id="navLinks">
-      <a href="#" data-page="home" class="active">Accueil</a>
-      <a href="#" data-page="services">Services</a>
-      <a href="#" data-page="portfolio">Portfolio</a>
-      <a href="#" data-page="contact">Contact</a>
+      <a href="index.html" data-page="home" class="active">Accueil</a>
+      <a href="about.html" data-page="about">À propos</a>
+      <a href="services.html" data-page="services">Services</a>
+      <a href="portfolio.html" data-page="portfolio">Portfolio</a>
+      <a href="contact.html" data-page="contact">Contact</a>
      </nav-links>
     </nav-container>
-   </nav><!-- Main Content -->
+   </nav>
+   
+
+   
+   
+   
+   <!-- Main Content -->
    <main>
-    <!-- Home Page -->
-    <div id="home" class="page active">
-     <section class="hero">
-      <div class="hero-content">
-       <h1 id="heroTitle">Votre vision, notre stratégie</h1>
-       <p id="heroSubtitle">Nous transformons vos idées en campagnes mémorables</p><button class="cta-btn" id="ctaButton" onclick="navigateTo('contact')">Commencer un projet</button>
-      </div>
-     </section>
-    </div><!-- Services Page -->
+
+
+  
+    
+    <!-- Services Page -->
     <div id="services" class="page">
      <section class="services-section">
       <h2 class="section-title">Nos Services</h2>
@@ -525,90 +680,43 @@
        </div>
       </div>
      </section>
-    </div><!-- Portfolio Page -->
-    <div id="portfolio" class="page">
-     <section class="portfolio-section">
-      <h2 class="section-title">Nos Projets</h2>
-      <div class="portfolio-grid">
-       <div class="portfolio-item">
-        <div class="portfolio-image">
-         📱
-        </div>
-        <div class="portfolio-info">
-         <h3>App E-commerce</h3>
-         <p>Plateforme de vente en ligne avec design moderne et UX optimisée.</p>
-        </div>
-       </div>
-       <div class="portfolio-item">
-        <div class="portfolio-image">
-         🎬
-        </div>
-        <div class="portfolio-info">
-         <h3>Campagne Vidéo</h3>
-         <p>Production d'une campagne vidéo virale pour réseau social.</p>
-        </div>
-       </div>
-       <div class="portfolio-item">
-        <div class="portfolio-image">
-         🏢
-        </div>
-        <div class="portfolio-info">
-         <h3>Branding Complet</h3>
-         <p>Identité visuelle complète pour une startup tech.</p>
-        </div>
-       </div>
-       <div class="portfolio-item">
-        <div class="portfolio-image">
-         📊
-        </div>
-        <div class="portfolio-info">
-         <h3>Stratégie Social Media</h3>
-         <p>Gestion et croissance d'audience sur 4 réseaux sociaux.</p>
-        </div>
-       </div>
-       <div class="portfolio-item">
-        <div class="portfolio-image">
-         🎨
-        </div>
-        <div class="portfolio-info">
-         <h3>Redesign Site Web</h3>
-         <p>Refonte complète d'un site web avec amélioration SEO.</p>
-        </div>
-       </div>
-       <div class="portfolio-item">
-        <div class="portfolio-image">
-         🎯
-        </div>
-        <div class="portfolio-info">
-         <h3>Campagne Email Marketing</h3>
-         <p>Série de 12 newsletters avec taux d'engagement élevé.</p>
-        </div>
-       </div>
-      </div>
-     </section>
-    </div><!-- Contact Page -->
-    <div id="contact" class="page">
-     <section class="contact-section">
-      <h2 class="section-title" style="margin-bottom: 2rem;">Contactez-nous</h2>
-      <form onsubmit="handleFormSubmit(event)">
-       <div class="form-group">
-        <label for="name">Nom complet</label> <input type="text" id="name" name="name" required>
-       </div>
-       <div class="form-group">
-        <label for="email">Email</label> <input type="email" id="email" name="email" required>
-       </div>
-       <div class="form-group">
-        <label for="subject">Sujet</label> <input type="text" id="subject" name="subject" required>
-       </div>
-       <div class="form-group">
-        <label for="message">Message</label> <textarea id="message" name="message" required></textarea>
-       </div><button type="submit" class="submit-btn">Envoyer</button>
-      </form>
-     </section>
     </div>
-   </main><!-- Footer -->
+    
+   
+    
+    
+    
+   </main>
+   
+   
+   <!-- Footer -->
    <footer>
-    <p>© 2024 Neel Communication - Agence de Communication. Tous droits réservés.</p>
+    <div class="footer-content">
+     <div class="footer-section">
+      <h4>À propos</h4>
+      <p>Neel Communication est votre partenaire digital pour transformer vos idées en réalité.</p>
+      <div class="social-links"><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">f</a> <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">𝕏</a> <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">📷</a> <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+      </div>
+     </div>
+     <div class="footer-section">
+      <h4>Services</h4>
+      <ul class="footer-links">
+       <li><a href="#" onclick="navigateTo('services'); return false;">Branding</a></li>
+       <li><a href="#" onclick="navigateTo('services'); return false;">Social Media</a></li>
+       <li><a href="#" onclick="navigateTo('services'); return false;">Web Design</a></li>
+       <li><a href="#" onclick="navigateTo('services'); return false;">Stratégie Digital</a></li>
+      </ul>
+     </div>
+     <div class="footer-section">
+      <h4>Contact</h4>
+      <p>📧 contact@neelcommunication.com</p>
+      <p>📞 +33 (0)1 23 45 67 89</p>
+      <p>📍 Paris, France</p>
+     </div>
+    </div>
+    <div class="footer-bottom">
+     <p id="footerText">© 2024 Neel Communication - Agence de Communication. Tous droits réservés.</p>
+    </div>
    </footer>
   </div>
   <script>
@@ -617,7 +725,9 @@
       agency_name: 'Neel Communication',
       hero_title: 'Votre vision, notre stratégie',
       hero_subtitle: 'Nous transformons vos idées en campagnes mémorables',
-      cta_button: 'Commencer un projet'
+      cta_button: 'Commencer un projet',
+      about_intro: 'Chez Neel Communication, nous croyons que chaque marque a une histoire unique à raconter.',
+      footer_text: '© 2024 Neel Communication - Agence de Communication. Tous droits réservés.'
     };
 
     let config = { ...defaultConfig };
@@ -631,6 +741,8 @@
         document.getElementById('heroTitle').textContent = config.hero_title || defaultConfig.hero_title;
         document.getElementById('heroSubtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
         document.getElementById('ctaButton').textContent = config.cta_button || defaultConfig.cta_button;
+        document.getElementById('aboutIntro').textContent = config.about_intro || defaultConfig.about_intro;
+        document.getElementById('footerText').textContent = config.footer_text || defaultConfig.footer_text;
       },
       mapToCapabilities: (config) => ({
         recolorables: [],
@@ -642,7 +754,9 @@
         ['agency_name', config.agency_name || defaultConfig.agency_name],
         ['hero_title', config.hero_title || defaultConfig.hero_title],
         ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
-        ['cta_button', config.cta_button || defaultConfig.cta_button]
+        ['cta_button', config.cta_button || defaultConfig.cta_button],
+        ['about_intro', config.about_intro || defaultConfig.about_intro],
+        ['footer_text', config.footer_text || defaultConfig.footer_text]
       ])
     });
 
@@ -679,5 +793,5 @@
     // Lucide icons
     lucide.createIcons();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a07cc4b12906f6dd',t:'MTc4MDgwNTAyMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a07cc9d4cf09cbbe',t:'MTc4MDgwNTIzMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
