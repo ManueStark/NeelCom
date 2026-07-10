@@ -19,12 +19,11 @@
       width: 100%;
     }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0f172a 0%, #1a202c 100%);
-      color: #e2e8f0;
-      overflow-x: hidden;
-    }
+    body{
+    background: linear-gradient(135deg,#020617,#0f172a,#164e63);
+    color:#fff;
+}
+    
 
     #app {
       height: 100%;
@@ -202,26 +201,22 @@
       }
     }
 
-    .cta-btn {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      background: linear-gradient(135deg, #22d3ee, #06b6d4);
-      color: #0f172a;
-      text-decoration: none;
-      border: none;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(34, 211, 238, 0.3);
-      animation: slideUp 0.8s ease-out 0.4s both;
-    }
+    .btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#22d3ee;
+    color:#0f172a;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:bold;
+    transition:.3s;
+}
 
-    .cta-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(34, 211, 238, 0.5);
-    }
+.btn:hover{
+    background:white;
+    transform:translateY(-3px);
+}
 
     /* Services Section */
     .services-section {
@@ -336,6 +331,95 @@
       color: #cbd5e1;
       font-size: 0.9rem;
     }
+
+/* site web/service*/
+
+   .section-wrap {
+      min-height: 100vh;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .siteweb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+   .siteweb-item{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+
+    opacity:0;
+    transform:translateY(50px);
+    animation:fadeUp .8s forwards;
+}
+
+
+.siteweb-item:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 50px rgba(34,211,238,.35);
+}
+
+   .siteweb-image{
+    height:250px;
+    overflow:hidden;
+}
+
+.siteweb-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.siteweb-item:hover img{
+    transform:scale(1.1);
+}
+
+
+    .siteweb-info {
+      padding: 1.5rem;
+    }
+
+    .siteweb-info h3 {
+      color: #f1f5f9;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .siteweb-info p {
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+
+    
+
+
+.siteweb-item:nth-child(1){animation-delay:.1s;}
+.siteweb-item:nth-child(2){animation-delay:.2s;}
+.siteweb-item:nth-child(3){animation-delay:.3s;}
+.siteweb-item:nth-child(4){animation-delay:.4s;}
+.siteweb-item:nth-child(5){animation-delay:.5s;}
+.siteweb-item:nth-child(6){animation-delay:.6s;}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
 
     /* Contact Section */
     .contact-section {
@@ -601,11 +685,11 @@
       Neel
      </div>
      <nav-links id="navLinks">
-      <a href="../index.html" data-page="home" class="active">Accueil</a>
+      <a href="../index.html" data-page="home">Accueil</a>
       <a href="../about.html" data-page="about">À propos</a>
-      <a href="page/services.html" data-page="services">Services</a>
-      <a href="page/portfolio.html" data-page="portfolio">Portfolio</a>
-      <a href="page/contact.html" data-page="contact">Contact</a>
+      <a href="../services.html" data-page="services" class="active">Services</a>
+      <a href="../portfolio.html" data-page="portfolio">Portfolio</a>
+      <a href="../contact.html" data-page="contact">Contact</a>
      </nav-links>
     </nav-container>
    </nav>
@@ -616,38 +700,103 @@
  
  <!-- Web Projects Subpage -->
     <div>
-     <section class="section-wrap">
-      <div style="margin-bottom:2rem"><button href="portfolio.html" style="display:inline-flex;align-items:center;gap:0.1rem;padding:1rem 1.5rem;background:rgba(34,211,238,0.2);border:1px solid rgba(34,211,238,0.4);border-radius:10px;color:#22d3ee;font-weight:600;cursor:pointer;transition:all 0.3s"> ⇐ <i data-lucide="arrow-left" style="width:2px;height:20px"></i>Retour au portfolio </button>
+
+      <div style="margin-bottom:2rem; padding-left: 1cm;padding-top: 1cm;"  ><button href="portfolio.html" style="display:inline-flex;align-items:center;gap:0.1rem;padding:1rem 1.5rem;background:rgba(34,211,238,0.2);border:1px solid rgba(34,211,238,0.4);border-radius:10px;color:#22d3ee;font-weight:600;cursor:pointer;transition:all 0.3s"> ⇐ <i data-lucide="arrow-left" style="width: 20px;height:20px"></i>Retour au portfolio </button>
       </div>
+      
+     <section class="section-wrap">
       <h3 data-template-id="web-projects-title" class="canva-text section-title">Site Web</h3>
-      <div class="portfolio-grid">
+      
+      <div style="align-content: center; padding-inline: 1cm; padding: 5cap;">
+
+        <p class="about-text" id="aboutIntro">Chez Neel Communication, nous croyons que chaque marque a une histoire unique à raconter.</p>
+        <p class="about-text">Notre équipe de créatifs, strategists et développeurs travaille en synergie pour transformer vos visions en réalités digitales impactantes.</p>
+        <p class="about-text">Depuis 2024, nous accompagnons des dizaines de clients dans leur transformation digitale et leur croissance.</p>
+       
+</div>
+
+      <div class="siteweb-grid;">
 
 
-            <div class="portfolio-item">
-                <img data-template-id="web-project-1-img" class="canva-image" loading="lazy">
-                <div class="portfolio-info">
-                  <h3 data-template-id="web-project-1-title" class="canva-text">Site Entreprise Corporate</h3>
-                  <p data-template-id="web-project-1-desc" class="canva-text">Un site web professionnel pour votre entreprise.</p>
-                </div>
+            <div class="siteweb-item">
+             <div class="siteweb-image">
+              <img src="images/site-web/site-agence.avif" alt="Site entreprise" class="image">
             </div>
 
+            <div class="siteweb-info">
+              <h3>Site E-commerce</h3>
+              <p>
+                  Une boutique en ligne rapide, sécurisée et optimisée pour convertir vos visiteurs en clients.
+              </p>
+              <a href="#" class="btn">Découvrir</a>
+</div>
 
 
-            <div class="portfolio-item">
-                <img data-template-id="web-project-2-img" class="canva-image" loading="lazy">
-                <div class="portfolio-info">
+
+           <div class="siteweb-item">
+             <div class="siteweb-image">
+              <img src="images/site-web/site-agence.avif" alt="Site entreprise" class="image">
+            </div>
+                
+                <div class="siteweb-info">
                 <h3 data-template-id="web-project-2-title" class="canva-text">Site E-commerce</h3>
                 <p data-template-id="web-project-2-desc" class="canva-text">Plateforme de vente en ligne avec design moderne et UX optimisée.</p>
-                </div>
+      
+
+                  <a href="#" class="btn">Découvrir</a>
+              </div>
             </div>
 
 
-            <div class="portfolio-item">
-                <img data-template-id="web-project-3-img" class="canva-image" loading="lazy">
-                <div class="portfolio-info">
+            <div class="siteweb-item">
+              <div class="siteweb-image">
+                 <img src="branding-charte.jpg" alt="image" class="image">
+              </div>
+
+                <div class="siteweb-info">
                 <h3 data-template-id="web-project-3-title" class="canva-text">Site Portfolio</h3>
                 <p data-template-id="web-project-3-desc" class="canva-text">Un site web pour présenter votre travail et vos réalisations.</p>
-                </div>
+                   <a href="#" class="btn">Découvrir</a>
+              </div>
+            </div>
+
+
+             <div class="siteweb-item">
+              <div class="siteweb-image">
+                 <img src="branding-charte.jpg" alt="image" class="image">
+              </div>
+                
+                <div class="siteweb-info">
+                <h3 data-template-id="web-project-3-title" class="canva-text">Site Portfolio</h3>
+                <p data-template-id="web-project-3-desc" class="canva-text">Un site web pour présenter votre travail et vos réalisations.</p>
+                   <a href="#" class="btn">Découvrir</a>
+              </div>
+            </div>
+
+
+              <div class="siteweb-item">
+              <div class="siteweb-image">
+                <img src="branding-charte.jpg" alt="image" class="image">
+              </div>
+                
+                <div class="siteweb-info">
+                <h3 data-template-id="web-project-3-title" class="canva-text">Site Portfolio</h3>
+                <p data-template-id="web-project-3-desc" class="canva-text">Un site web pour présenter votre travail et vos réalisations.</p>
+                  <a href="#" class="btn">Découvrir</a>
+              </div>
+            </div>
+
+
+              <div class="siteweb-item">
+              <div class="siteweb-image">
+                 <img src="branding-charte.jpg" alt="image" class="image">
+              </div>
+                
+                <div class="siteweb-info">
+                <h3 data-template-id="web-project-3-title" class="canva-text">Site Portfolio</h3>
+                <p data-template-id="web-project-3-desc" class="canva-text">Un site web pour présenter votre travail et vos réalisations.</p>
+                  <a href="#" class="btn">Découvrir</a>
+              </div>
             </div>
 
       </div>
