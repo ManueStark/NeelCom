@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="fr">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Branding - Neel Communication</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body{
+    background: linear-gradient(135deg,#020617,#0f172a,#164e63);
+    color:#fff;
+}
+
+
+    #app {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation */
+    nav {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(34, 211, 238, 0.2);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+
+    nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #22d3ee, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -1px;
+    }
+
+    nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding-bottom: 0.25rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav-links a:hover,
+    nav-links a.active {
+      color: #22d3ee;
+      border-bottom-color: #22d3ee;
+    }
+
+    .btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#22d3ee;
+    color:#0f172a;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:white;
+    transform:translateY(-3px);
+}
+
+    .section-title {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 3rem;
+      text-align: center;
+      background: linear-gradient(135deg, #f1f5f9, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .section-wrap {
+      min-height: 100vh;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .branding-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+   .branding-item{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+
+    opacity:0;
+    transform:translateY(50px);
+    animation:fadeUp .8s forwards;
+}
+
+.branding-item:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 50px rgba(34,211,238,.35);
+}
+
+   .branding-image{
+    height:250px;
+    overflow:hidden;
+}
+
+.branding-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.branding-item:hover img{
+    transform:scale(1.1);
+}
+
+    .branding-info {
+      padding: 1.5rem;
+    }
+
+    .branding-info h3 {
+      color: #f1f5f9;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .branding-info p {
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+
+.branding-item:nth-child(1){animation-delay:.1s;}
+.branding-item:nth-child(2){animation-delay:.2s;}
+.branding-item:nth-child(3){animation-delay:.3s;}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+    /* Footer */
+    footer {
+      background: rgba(15, 23, 42, 0.95);
+      border-top: 1px solid rgba(34, 211, 238, 0.2);
+      padding: 3rem 2rem;
+      width: 100%;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      color: #22d3ee;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-section p {
+      color: #cbd5e1;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #22d3ee;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(34, 211, 238, 0.1);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      border-radius: 50%;
+      color: #22d3ee;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.3rem;
+    }
+
+    .social-links a:hover {
+      background: rgba(34, 211, 238, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(34, 211, 238, 0.2);
+      padding-top: 2rem;
+      text-align: center;
+      color: #cbd5e1;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ <script src="/_sdk/telemetry_sdk.js"></script></head>
+ <body>
+  <div id="app" class="h-full w-full">
+
+    <!-- Navigation -->
+   <nav>
+    <nav-container>
+     <div class="logo" id="navLogo">
+      Neel
+     </div>
+     <nav-links id="navLinks">
+      <a href="../index.html" data-page="home">Accueil</a>
+      <a href="../about.html" data-page="about">À propos</a>
+      <a href="../services.html" data-page="services" class="active">Services</a>
+      <a href="../portfolio.html" data-page="portfolio">Portfolio</a>
+      <a href="../contact.html" data-page="contact">Contact</a>
+     </nav-links>
+    </nav-container>
+   </nav>
+
+    <!-- Branding Subpage -->
+    <div>
+
+      <div style="margin-bottom:2rem; padding-left: 1cm;padding-top: 1cm;"><a href="../services.html" style="display:inline-flex;align-items:center;gap:0.4rem;padding:1rem 1.5rem;background:rgba(34,211,238,0.2);border:1px solid rgba(34,211,238,0.4);border-radius:10px;color:#22d3ee;font-weight:600;cursor:pointer;transition:all 0.3s;text-decoration:none;"><i data-lucide="arrow-left" style="width: 20px;height:20px"></i> Retour aux services</a>
+      </div>
+
+     <section class="section-wrap">
+      <h3 class="section-title">Branding</h3>
+
+      <div style="align-content: center; padding-inline: 1cm; padding: 5cap;">
+
+        <p class="about-text">Nous créons des identités de marque uniques et mémorables qui racontent votre histoire et vous démarquent durablement de la concurrence.</p>
+        <p class="about-text">De la conception du logo à la charte graphique complète, chaque élément visuel est pensé pour refléter les valeurs et la personnalité de votre marque.</p>
+        <p class="about-text">Notre approche allie créativité et stratégie pour construire une identité cohérente sur tous vos supports de communication.</p>
+
+      </div>
+
+      <div class="branding-grid">
+
+            <div class="branding-item">
+             <div class="branding-image">
+              <img src="images/Branding-logo.avif" alt="Création de logo" class="image">
+            </div>
+
+            <div class="branding-info">
+              <h3>Création de Logo</h3>
+              <p>
+                  Un logo original et distinctif qui incarne l'identité visuelle de votre marque.
+              </p>
+              <a href="../contact.html" class="btn">Demander un devis</a>
+            </div>
+            </div>
+
+            <div class="branding-item">
+             <div class="branding-image">
+              <img src="images/branding-charte.jpg" alt="Charte graphique" class="image">
+            </div>
+
+            <div class="branding-info">
+              <h3>Charte Graphique</h3>
+              <p>Un guide complet de vos couleurs, typographies et usages visuels pour garantir une communication cohérente.</p>
+              <a href="../contact.html" class="btn">Demander un devis</a>
+            </div>
+            </div>
+
+            <div class="branding-item">
+             <div class="branding-image">
+              <img src="images/branding-carte.jpg" alt="Supports de communication" class="image">
+            </div>
+
+            <div class="branding-info">
+              <h3>Supports de Communication</h3>
+              <p>Cartes de visite, papeterie et supports print déclinés selon votre nouvelle identité de marque.</p>
+              <a href="../contact.html" class="btn">Demander un devis</a>
+            </div>
+            </div>
+
+      </div>
+     </section>
+    </div>
+
+     <!-- Footer -->
+    <footer>
+            <div class="footer-content">
+            <div class="footer-section">
+            <h4>À propos</h4>
+            <p>Neel Communication est votre partenaire digital pour transformer vos idées en réalité.</p>
+           <div class="social-links">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">𝕏</a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">📷</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+            </div>
+          </div>
+            <div class="footer-section">
+            <h4>Services</h4>
+            <ul class="footer-links">
+            <li><a href="../services.html">Branding</a></li>
+            <li><a href="../services.html">Social Media</a></li>
+            <li><a href="../services.html">Web Design</a></li>
+            <li><a href="../services.html">Stratégie Digital</a></li>
+            </ul>
+            </div>
+            <div class="footer-section">
+            <h4>Contact</h4>
+            <p>📧 contact@neelcommunication.com</p>
+            <p>📞 +33 (0)1 23 45 67 89</p>
+            <p>📍 Abidjan, Côte d'Ivoire</p>
+            </div>
+            </div>
+            <div class="footer-bottom">
+            <p>© 2024 Neel Communication - Agence de Communication. Tous droits réservés.</p>
+            </div>
+    </footer>
+
+  </div>
+  <script>
+    lucide.createIcons();
+  </script>
+ </body>
+</html>
